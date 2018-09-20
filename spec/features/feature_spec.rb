@@ -10,10 +10,14 @@ require './app'
 
 RSpec.feature "Entering player names" do
   scenario "Players enter their names at the beginning" do
-    visit '/'
-    fill_in 'player1', with: 'Marianne'
-    fill_in 'player2', with: 'Cristina'
-    click_button 'Submit'
+    sign_in_and_play
     expect(page).to have_content('Marianne vs. Cristina')
+  end
+end
+
+RSpec.feature "View player 2 score" do
+  scenario "display score" do
+    sign_in_and_play
+    expect(page).to have_content('Cristina HP: 100')
   end
 end
