@@ -1,13 +1,6 @@
 require 'spec_helper'
 require './app'
 
-# RSpec.feature "Testing infrastructure" do
-#   scenario "starting homepage" do
-#     visit '/'
-#     expect(page).to have_content("Testing infrastructure working!")
-#   end
-# end
-
 RSpec.feature "Entering player names" do
   scenario "Players enter their names at the beginning" do
     sign_in_and_play
@@ -19,5 +12,13 @@ RSpec.feature "View player 2 score" do
   scenario "display score" do
     sign_in_and_play
     expect(page).to have_content('Cristina HP: 100')
+  end
+end
+
+RSpec.feature 'attack player 2' do
+  scenario 'get confirmation' do
+    sign_in_and_play
+    click_button 'attack player2'
+    expect(page).to have_content('Marianne attacked Cristina')
   end
 end
