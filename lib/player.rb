@@ -7,10 +7,6 @@ DEFAULT_HITPOINTS = 60
     @hitpoints = hitpoints
   end
 
-  def attack(player)
-    player.receive_damage
-  end
-
   def receive_damage
     @hitpoints -= 10
   end

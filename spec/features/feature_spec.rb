@@ -25,6 +25,6 @@ RSpec.feature 'attack player 2' do
   scenario "reduce player 2's HP by 10" do
     sign_in_and_play
     click_button 'attack player2'
-    expect(page).to have_content('Marianne HP: 100 vs. Cristina HP: 90')
+    expect(page).to have_content('Cristina HP: 50')
   end
 end
